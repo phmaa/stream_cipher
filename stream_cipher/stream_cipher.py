@@ -60,8 +60,10 @@ if __name__ == '__main__':
     stream=stream_generator(m, iv)
 
     keystream = pad_key(msg, stream)
+    print('Keystream: '+ keystream)
 
     bits=process_msg(msg, keystream)
 
     ptxt = decrypt(bits)
-    print(ptxt)
+    
+    print('Plaintext: ' + ptxt)
